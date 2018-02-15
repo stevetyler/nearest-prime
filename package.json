@@ -1,0 +1,20 @@
+{
+  "name": "nearest-prime",
+  "version": "1.0.0",
+  "description": "Node API to get nearest prime to a given number",
+  "main": "index.js",
+  "repository": "https://github.com/stevetyler/nearest-prime",
+  "author": "Steve Tyler <mail@steve-tyler.co.uk>",
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "9.4.6",
+    "is-prime": "1.0.1",
+    "koa": "2.5.0",
+    "ts-node": "4.1.0",
+    "typescript": "2.7.1"
+  },
+  "scripts": {
+    "start": "npm run build:live",
+    "build:live": "nodemon --exec ./node_modules/.bin/ts-node -- ./index.ts"
+  }
+}
