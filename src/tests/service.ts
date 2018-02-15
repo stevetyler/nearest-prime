@@ -3,6 +3,60 @@ const assert = require('assert');
 const expect = require('chai').expect;
 
 describe('Service', () => {
+  it('returns error for string', () => {
+    try {
+      nearestPrime(string);
+    }
+    catch(err) {
+      assert.equal(err, 'ReferenceError: string is not defined');
+    }
+  });
+
+  it('returns error for null', () => {
+    try {
+      nearestPrime(null);
+    }
+    catch(err) {
+      assert.equal(err, 'TypeError: Expected a number');
+    }
+  });
+
+  it('returns error for NaN', () => {
+    try {
+      nearestPrime(NaN);
+    }
+    catch(err) {
+      assert.equal(err, 'Error: The number must be a integer');
+    }
+  });
+
+  it('returns error for -100', () => {
+    try {
+      nearestPrime(-100);
+    }
+    catch(err) {
+      assert.equal(err, 'Error: The number must be a positive integer');
+    }
+  });
+
+  it('returns error for -1', () => {
+    try {
+      nearestPrime(-1);
+    }
+    catch(err) {
+      assert.equal(err, 'Error: The number must be a positive integer');
+    }
+  });
+
+  it('returns error for 0', () => {
+    try {
+      nearestPrime(0);
+    }
+    catch(err) {
+      assert.equal(err, 'Error: The number must be a positive integer');
+    }
+  });
+
   it('finds nearest prime for 1', () => {
     assert.equal(nearestPrime(1), 2);
   });

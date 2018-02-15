@@ -10,7 +10,7 @@ server.use(restify.plugins.bodyParser());
 server.get('/:number', function (req, res, next) {
   const num = parseInt(req.params.number, 10);
 
-  if (!Number.isInteger(num) || num < 2) {
+  if (!Number.isInteger(num) || num < 1) {
     res.send('wrong request');
     res.status(400);
     return;
