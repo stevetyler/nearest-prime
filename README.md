@@ -20,9 +20,9 @@ You will need the following things properly installed on your computer.
 ## Running
 
 * `yarn start`
-* Enter a positive number at [http://localhost:3000] eg (http://localhost:3000/100) which will return the nearest prime number(s). Tested up to 10 digits.
+* Enter a positive number at [http://localhost:3000] with either curl or a browser eg (http://localhost:3000/100) which will return the nearest prime number(s). Tested up to 10 digits.
 
 
 ## Testing
 
-* Due to issues with Typescript and Mocha, unit tests have been added to index.ts and will output with yarn start.
+* `yarn test`
