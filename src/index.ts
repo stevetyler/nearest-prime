@@ -1,18 +1,32 @@
-const Koa = require('koa');
+const restify = require('restify');
+const server = restify.createServer();
 const isPrime = require('is-prime');
 
-const app = new Koa()
+server.use(restify.plugins.acceptParser(server.acceptable));
+server.use(restify.plugins.queryParser());
+server.use(restify.plugins.bodyParser());
 
-app.use(async ctx => {
-  const num = parseInt(ctx.request.query.number, 10);
-  console.log('input', typeof(num));
+server.get('/:number', function (req, res, next) {
+  if (typeof req.params.number !== 'number') {
+    res.status(400);
+    return;
+  }
+
+  const num = parseInt(req.params.number, 10);
+  console.log(num, typeof(num));
 
   const response = {
     nearest_prime_number: nearestPrime(num as number)
-  };
+  }
 
-  ctx.body = response
-})
+  res.send(response);
+  return;
+});
+
+server.listen(8080, function () {
+  console.log('%s listening at %s', server.name, server.url);
+});
+
 
 function nearestPrime(num: number) {
   let x, y, result;
@@ -51,7 +65,6 @@ function nearestPrime(num: number) {
   }
 }
 
-app.listen(process.env.PORT || 8081)
 
 /* Unit Tests */
 console.log('\n** unit tests ** \n' );
