@@ -1,17 +1,28 @@
 # Nearest Prime
 
+REST API to get the nearest prime number(s) to a given number.
+
+## Prerequisites
+
+You will need the following things properly installed on your computer.
+
+* [Git](http://git-scm.com/)
+* [Node.js](http://nodejs.org/) (with NPM)
 
 
-# Task
+## Installation
 
-Objective: build a small server application that calculates the nearest prime number to a provided number.  For example if I pass '27' to the application it should return '29'.
+* `git clone https://github.com/stevetyler/nearest-prime` this repository
+* `cd nearest-prime`
+* `yarn install`
 
-A few constraints:
-It should provide an REST API as its endpoint.
-It should be written in typescript and run in node.js
-It should use a server framework (restify or express, etc.).   localhost:5000?number=27 { numer: 29 }  
-It should have a suitable npm package file and build script.
 
-Credit will be awarded for coding style, structure and test ability.
+## Running
 
-Please provide your solution either as a zip file, GitHub or bitbucket repository.  This should only take an evening or two.
+* `yarn start`
+* Enter a positive number at [http://localhost:3000] eg (http://localhost:3000/100) which will return the nearest prime number(s). Tested up to 10 digits.
+
+
+## Testing
+
+* Due to issues with Typescript and Mocha, unit tests have been added to index.ts and will output with yarn start.
