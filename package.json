@@ -18,8 +18,8 @@
     "typescript": "2.7.1"
   },
   "scripts": {
-    "start": "yarn start build:live",
+    "start": "yarn run build:live",
     "build:live": "nodemon --exec ./node_modules/.bin/ts-node -- ./src/index.ts",
-    "test": "mocha --require ts-node/register src/tests/index.ts"
+    "test": "mocha --require ts-node/register src/tests/service.ts"
   }
 }
